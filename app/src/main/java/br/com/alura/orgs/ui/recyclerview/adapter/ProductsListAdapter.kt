@@ -11,17 +11,19 @@ import br.com.alura.orgs.model.Product
 
 class ProductsListAdapter(
     private val context: Context,
-    private val products: List<Product>
+    products: List<Product>
 ) : RecyclerView.Adapter<ProductsListAdapter.ViewHolder>() {
+
+    private val products = products.toMutableList()
 
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
 
         fun bind(product: Product) {
-            val name = itemView.findViewById<TextView>(R.id.name)
+            val name = itemView.findViewById<TextView>(R.id.product_item_name)
             name.text = product.name
-            val description = itemView.findViewById<TextView>(R.id.description)
+            val description = itemView.findViewById<TextView>(R.id.product_item_description)
             description.text = product.description
-            val price = itemView.findViewById<TextView>(R.id.price)
+            val price = itemView.findViewById<TextView>(R.id.product_item_price)
             price.text = product.price.toPlainString()
         }
 
@@ -38,6 +40,12 @@ class ProductsListAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val product = products[position]
         holder.bind(product)
+    }
+
+    fun refresh(products: List<Product>) {
+        this.products.clear()
+        this.products.addAll(products)
+        notifyDataSetChanged()
     }
 
 }

@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/product_item_name"
         android:layout_margin="16dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/description"
+        android:id="@+id/product_item_description"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_width="0dp"
@@ -24,10 +24,10 @@
         tools:text="Orange, Mango and Grapes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name" />
+        app:layout_constraintTop_toBottomOf="@id/product_item_name" />
 
     <TextView
-        android:id="@+id/price"
+        android:id="@+id/product_item_price"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_width="0dp"
@@ -35,6 +35,6 @@
         tools:text="19.99"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/description" />
+        app:layout_constraintTop_toBottomOf="@id/product_item_description" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
